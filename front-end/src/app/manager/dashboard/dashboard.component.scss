@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+
+  app-side-menu {
+    display: block;
+
+  }
+
+  .wrapping {
+    flex: 1;
+
+    app-header-manager {
+      display: block;
+
+    }
+
+  }
+}
