@@ -1,9 +1,7 @@
-<app-side-menu class="flex"></app-side-menu>
-<section class="wrapping d-flex flex-column">
-  <div class="container">
-    <div class="row">
-      dashboard works!
-    </div>
+<app-header-manager></app-header-manager>
+<section class="wrapping">
+  <div class="out-let">
+    <router-outlet></router-outlet>
   </div>
-  <app-header-manager></app-header-manager>
+  <app-side-menu></app-side-menu>
 </section>

@@ -1,3 +1,17 @@
-<p>
-  side-menu works!
-</p>
+<section class="left-side-menu">
+  <ul>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <span><i class="fa fa-address-book"></i></span>
+      <a routerLink="/admin/dash-board/management-user">
+        Quản lý người dùng
+      </a>
+
+    </li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <span><i class="fa fa-tasks"></i></span>
+      <a routerLink="/admin/dash-board/management-product">Quản lý sản
+        phẩm
+      </a>
+    </li>
+  </ul>
+</section>

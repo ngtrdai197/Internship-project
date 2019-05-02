@@ -1,18 +1,32 @@
-:host {
+// :host {
+//   display: flex;
+
+//   app-side-menu {
+//     // display: block;
+
+//   }
+
+//   .wrapping {
+//     flex: 1;
+
+//     app-header-manager {
+//       // display: block;
+//     }
+
+//   }
+// }
+:host{
   display: flex;
-
-  app-side-menu {
-    display: block;
-
+  flex-direction: column;
+  app-header-manager{
+    height: 5vh;
   }
-
-  .wrapping {
-    flex: 1;
-
-    app-header-manager {
-      display: block;
-
+  .wrapping{
+    display: flex;
+    height: 95vh;
+    .out-let{
+      flex: 1;
+      order: 2;
     }
-
   }
 }

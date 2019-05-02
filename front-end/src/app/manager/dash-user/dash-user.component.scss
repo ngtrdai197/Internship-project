@@ -1,0 +1,27 @@
+:host{
+  .dash-user{
+    height: 100%;
+    position: relative;
+    .table{
+      width: 80%;
+      margin: 0 auto;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%,-30%);
+      tbody{
+        tr:hover{
+          cursor: pointer;
+        }
+      }
+      .wrapping-button-group{
+        position: absolute;
+        margin-top: 45px;
+        width: 100%;
+        button{
+          margin: 015px;
+        }
+      }
+    }
+  }
+}

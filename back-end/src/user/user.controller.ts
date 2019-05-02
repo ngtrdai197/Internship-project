@@ -31,7 +31,7 @@ export class UsersController {
   @UseGuards(AuthGuard('jwt'), RolesGuard)
   @SetMetadata('roles', ['Admin'])
   @ApiResponse({ status: 401, description: 'Unauthorized.' })
-  @ApiResponse({ status: 401, description: 'You do not have permission (Roles).' })
+  @ApiResponse({ status: 403, description: 'You do not have permission (Roles).' })
   @ApiCreatedResponse({ type: CreateUserDto })
   @Get('api')
   async findAll() {
