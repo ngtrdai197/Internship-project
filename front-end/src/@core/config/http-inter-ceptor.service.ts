@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpEvent, HttpRequest, HttpHandler, HttpResponse } from '@angular/common/http';
-import { tap, catchError } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { JwtService } from '../services/user/jwt.service';
@@ -26,13 +26,11 @@ export class HttpInterCeptorService implements HttpInterceptor {
           if (event instanceof HttpResponse) {
             // do stuff with response if you want
           }
-        }, catchError((err: any) => {
-          if (err.status === 401) {
+        }, ((err: any) => {
+          if (err.error.statusCode === 401) {
             // redirect to the login route
             this.router.navigate(['auth']);
             this.jwtService.destroyToken();
-            console.log('Error 401 rồi cu ... ');
-            throw err;
           }
           throw err;
         })

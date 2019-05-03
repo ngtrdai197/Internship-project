@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import * as decode from 'jwt-decode';
 
 @Injectable({providedIn:"root"})
 export class JwtService {
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   setToken(token) {
     localStorage.setItem('x-access-token', token);
