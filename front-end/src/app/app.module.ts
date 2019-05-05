@@ -9,7 +9,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HttpInterCeptorService } from 'src/@core/config/http-inter-ceptor.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({

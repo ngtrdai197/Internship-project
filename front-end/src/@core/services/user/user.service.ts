@@ -13,8 +13,19 @@ export class UserService {
     return this.http.post(`${API.HOST}/auth/token`, user);
   }
 
-  onFetchUsers():Observable<IUser[]>{
+  onFetchUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(`${API.HOST}/users/api`);
   }
 
+  onDeleteUser(id: String): Observable<Object> {
+    return this.http.delete<Object>(`${API.HOST}/${API.USER.DELETE_USER}/${id}`);
+  }
+
+  onCreateNewUser(user: IUser): Observable<Object> {
+    return this.http.post<Object>(`${API.HOST}/${API.USER.CREATE_USER}`, user);
+  }
+
+  onUpdateUser(id: String, user: IUser): Observable<Object> {
+    return this.http.put<Object>(`${API.HOST}/${API.USER.UPDATE_USER}/${id}`, user);
+  }
 }
