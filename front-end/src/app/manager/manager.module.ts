@@ -7,6 +7,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
 import { DashUserComponent } from './dash-user/dash-user.component';
 import { DashProductComponent } from './dash-product/dash-product.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatOptionModule } from '@angular/material';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogDashUserComponent } from './dialog-dash-user/dialog-dash-user.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { FormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   {
@@ -22,11 +30,23 @@ const routes: Routes = [
   declarations: [
     SideMenuComponent, HeaderManagerComponent,
     DashboardComponent, DashboardContentComponent,
-    DashUserComponent, DashProductComponent
+    DashUserComponent, DashProductComponent, DialogDashUserComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatSelectModule,
+    MatOptionModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  entryComponents: [DialogDashUserComponent]
 })
 export class ManagerModule { }

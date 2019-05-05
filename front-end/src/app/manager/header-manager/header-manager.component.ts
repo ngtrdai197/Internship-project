@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtService } from 'src/@core/services/user/jwt.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-manager',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jwtService: JwtService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  onSignOut() {
+    this.jwtService.destroyToken();
+    this.router.navigate(['']);
+  }
 }
