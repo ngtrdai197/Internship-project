@@ -18,6 +18,8 @@ export class DialogDashUserComponent implements OnInit {
   password: String = "";
   fullname: String = "";
   address: String = "";
+  email: String = "";
+  phone: String = "";
   role: String | IRole = "";
 
   constructor(
@@ -39,6 +41,8 @@ export class DialogDashUserComponent implements OnInit {
       this.password = this.data.user.password;
       this.fullname = this.data.user.fullname;
       this.address = this.data.user.address;
+      this.email = this.data.user.email,
+      this.phone = this.data.user.phone,
       this.role = this.data.user.role;
     }
   }
@@ -48,6 +52,8 @@ export class DialogDashUserComponent implements OnInit {
       password: this.password,
       fullname: this.fullname,
       address: this.address,
+      email: this.email,
+      phone: this.phone,
       role: this.role
     }
     this.userService.onUpdateUser(this.data.user._id, user).subscribe(response => {
@@ -64,9 +70,9 @@ export class DialogDashUserComponent implements OnInit {
     });
     this.dialogRef.close();
   }
-  onAddNewUser(username, password, fullname, address) {
+  onAddNewUser(username, password, fullname, address, email, phone) {
     const user: IUser = {
-      username, password, fullname, address, role:this.role
+      username, password, fullname, address, role: this.role, email, phone
     }
     this.userService.onCreateNewUser(user).subscribe(response => {
       if (response) {

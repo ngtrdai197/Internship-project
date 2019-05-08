@@ -25,14 +25,23 @@ export class CreateUserDto {
     @ApiModelProperty()
     @IsString()
     readonly fullname: string;
+    @prop({
+        required: [true, 'Fullname is required'],
+    })
 
     @ApiModelProperty()
     @IsString()
     readonly phone: string;
+    @prop({
+        required: [true, 'Phone is required'],
+    })
 
     @ApiModelProperty()
     @IsEmail()
     readonly email: string;
+    @prop({
+        required: [true, 'Email is required'],
+    })
 
     @ApiModelProperty()
     @IsString()

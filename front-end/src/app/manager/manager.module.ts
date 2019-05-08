@@ -34,7 +34,9 @@ const routes: Routes = [
   declarations: [
     SideMenuComponent, HeaderManagerComponent,
     DashboardComponent, DashboardContentComponent,
-    DashUserComponent, DashProductComponent, DialogDashUserComponent, DashCategoryComponent, DialogDashCategoryComponent, DialogDashProductComponent
+    DashUserComponent, DashProductComponent,
+    DialogDashUserComponent, DashCategoryComponent,
+    DialogDashCategoryComponent, DialogDashProductComponent
   ],
   imports: [
     CommonModule,

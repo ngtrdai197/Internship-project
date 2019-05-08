@@ -17,7 +17,6 @@ export const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  address: String,
   email: {
     type: String,
     required: true
@@ -26,6 +25,7 @@ export const UserSchema = new mongoose.Schema({
     type: String,
     default: "User"
   },
+  address: String,
   order_details: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'OrderDetails' }
   ]

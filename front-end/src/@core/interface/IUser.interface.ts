@@ -5,6 +5,8 @@ export interface IUser {
   username: String;
   password: String;
   fullname: String;
-  address: String;
+  phone: String,
+  email: String,
+  address?: String;
   role?: IRole | String;
 }
