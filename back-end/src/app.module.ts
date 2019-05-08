@@ -6,8 +6,9 @@ import { CategoryModule } from './category/category.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { resolve, join } from 'path';
 import { EmailModule } from './email/email.module';
-import config from './config/keys.config';
 import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
+import { ProductModule } from './product/product.module';
+import config from './config/keys.config';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { HandlebarsAdapter, MailerModule } from '@nest-modules/mailer';
         },
       },
     }),
+    ProductModule,
   ],
   controllers: [],
   providers: []

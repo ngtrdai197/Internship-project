@@ -13,7 +13,7 @@ async function bootstrap() {
   const options = new DocumentBuilder().setTitle('API web thương mại điện tử')
     .setDescription('Mô tả API cho trang web thương mại điện tử')
     .setVersion('1.0')
-    .setBasePath('http://localhost:8080')
+    .setBasePath('')
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);

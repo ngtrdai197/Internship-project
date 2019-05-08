@@ -1,7 +1,8 @@
 import { Controller, Get, Res } from '@nestjs/common';
 import { MailerService } from '@nest-modules/mailer';
 import config from '../config/keys.config';
-
+import { ApiUseTags } from '@nestjs/swagger';
+@ApiUseTags('Email')
 @Controller('email')
 export class EmailController {
     constructor(private readonly mailerService: MailerService) { }

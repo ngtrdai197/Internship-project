@@ -1,6 +1,6 @@
 import { UserRole } from "src/user/user-role.enum";
 import { ApiModelProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
+import { IsString, IsEmail } from 'class-validator';
 import { prop } from 'typegoose'
 
 
@@ -28,9 +28,21 @@ export class CreateUserDto {
 
     @ApiModelProperty()
     @IsString()
+    readonly phone: string;
+
+    @ApiModelProperty()
+    @IsEmail()
+    readonly email: string;
+
+    @ApiModelProperty()
+    @IsString()
     readonly address: string;
 
     @ApiModelProperty({ enum: ['User', 'Admin'] })
     @prop({ enum: UserRole, default: UserRole.User })
-    readonly role: UserRole;
+    readonly role: String;
+
+    @ApiModelProperty()
+    @IsString()
+    readonly order_details: String[];
 }

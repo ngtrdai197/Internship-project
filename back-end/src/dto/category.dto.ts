@@ -1,8 +1,14 @@
 import { ApiModelProperty } from "@nestjs/swagger";
-import { IsString } from "class-validator";
+import { IsString, IsArray } from "class-validator";
+import { Product } from "src/interfaces/product.interface";
 
 export class CreateCategoryDto {
     @ApiModelProperty()
     @IsString()
-    readonly categoryname: string;
+    readonly categoryName: String;
+
+    @ApiModelProperty()
+    @IsArray()
+    @IsString()
+    readonly products?: Product[] | String[];
 }

@@ -12,8 +12,11 @@ import { MatPaginatorModule, MatFormFieldModule, MatInputModule, MatButtonModule
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogDashUserComponent } from './dialog-dash-user/dialog-dash-user.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
+import { DashCategoryComponent } from './dash-category/dash-category.component';
+import { DialogDashCategoryComponent } from './dialog-dash-category/dialog-dash-category.component';
+import { DialogDashProductComponent } from './dialog-dash-product/dialog-dash-product.component';
 
 
 const routes: Routes = [
@@ -21,7 +24,8 @@ const routes: Routes = [
     path: 'dash-board', component: DashboardComponent, children: [
       { path: '', redirectTo: 'management-user', pathMatch: 'full' },
       { path: 'management-user', component: DashUserComponent },
-      { path: 'management-product', component: DashProductComponent }
+      { path: 'management-product', component: DashProductComponent },
+      { path: 'management-category', component: DashCategoryComponent },
     ]
   }
 ]
@@ -30,7 +34,7 @@ const routes: Routes = [
   declarations: [
     SideMenuComponent, HeaderManagerComponent,
     DashboardComponent, DashboardContentComponent,
-    DashUserComponent, DashProductComponent, DialogDashUserComponent
+    DashUserComponent, DashProductComponent, DialogDashUserComponent, DashCategoryComponent, DialogDashCategoryComponent, DialogDashProductComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +51,10 @@ const routes: Routes = [
     MatOptionModule,
     RouterModule.forChild(routes)
   ],
-  entryComponents: [DialogDashUserComponent]
+  entryComponents: [
+    DialogDashUserComponent,
+    DialogDashCategoryComponent,
+    DialogDashProductComponent
+  ]
 })
 export class ManagerModule { }
