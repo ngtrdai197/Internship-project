@@ -13,7 +13,7 @@ const routes: Routes = [
 
   { path: 'home', component: HomepageComponent },
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
-  { path: 'admin', loadChildren: './manager/manager.module#ManagerModule', canActivate: [AuthGuard]},
+  { path: 'admin', loadChildren: './manager/manager.module#ManagerModule', canActivate: [AuthGuard] },
   // {
   //   path: 'home', component: LayoutComponent, children: [
   //     { path: '', component: HomepageComponent }

@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class DashUserComponent implements OnInit {
   users: IUser[] = [];
   isToggle: Boolean = false;
-
+  isLoading = true;
   displayedColumns: string[] = ['no', 'username', 'fullname', 'address', 'role', 'action'];
   dataSource: MatTableDataSource<IUser>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -24,7 +24,7 @@ export class DashUserComponent implements OnInit {
   selectedIdDetele = '';
   constructor(public dialog: MatDialog, private title: Title,
     private userService: UserService,
-    private toastService: ToastrService
+    private toastService: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class DashUserComponent implements OnInit {
     this.userService.onFetchUsers().subscribe((data: IUser[]) => {
       this.users = data;
       this.onDataTable();
-    })
+    });
   }
   onCheckedUser(user) {
     if (this.users) {
@@ -90,6 +90,9 @@ export class DashUserComponent implements OnInit {
     this.dataSource = new MatTableDataSource<IUser>(this.users);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
   }
 
   applyFilter(filterValue: string) {

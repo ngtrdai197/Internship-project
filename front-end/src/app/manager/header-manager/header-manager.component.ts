@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderManagerComponent implements OnInit {
 
-  constructor(private jwtService: JwtService, private router: Router) { }
+  constructor(private jwtService: JwtService,
+    private router: Router) { }
 
   ngOnInit() {
   }

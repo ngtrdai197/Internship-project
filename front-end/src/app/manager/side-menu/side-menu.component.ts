@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShareService } from 'src/@core/services/shared/share.service';
 
 @Component({
   selector: 'app-side-menu',

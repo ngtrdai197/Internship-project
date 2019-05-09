@@ -17,14 +17,15 @@ import { FormsModule } from '@angular/forms';
 import { DashCategoryComponent } from './dash-category/dash-category.component';
 import { DialogDashCategoryComponent } from './dialog-dash-category/dialog-dash-category.component';
 import { DialogDashProductComponent } from './dialog-dash-product/dialog-dash-product.component';
+import { SharedModule } from 'src/@shared/shared.module';
 
 
 const routes: Routes = [
   {
     path: 'dash-board', component: DashboardComponent, children: [
       { path: '', redirectTo: 'management-user', pathMatch: 'full' },
-      { path: 'management-user', component: DashUserComponent },
-      { path: 'management-product', component: DashProductComponent },
+      { path: 'management-user', component: DashUserComponent, data: { animation: 'Dash-User' } },
+      { path: 'management-product', component: DashProductComponent, data: { animation: 'Dash-Product' } },
       { path: 'management-category', component: DashCategoryComponent },
     ]
   }
@@ -41,6 +42,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,

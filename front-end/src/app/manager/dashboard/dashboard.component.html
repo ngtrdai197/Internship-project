@@ -1,7 +1,7 @@
 <app-header-manager></app-header-manager>
 <section class="wrapping">
-  <div class="out-let">
-    <router-outlet></router-outlet>
+  <div class="out-let" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet  #outlet="outlet"></router-outlet>
   </div>
   <app-side-menu></app-side-menu>
 </section>

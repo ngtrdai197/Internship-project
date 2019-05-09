@@ -1,32 +1,17 @@
-// :host {
-//   display: flex;
-
-//   app-side-menu {
-//     // display: block;
-
-//   }
-
-//   .wrapping {
-//     flex: 1;
-
-//     app-header-manager {
-//       // display: block;
-//     }
-
-//   }
-// }
-:host{
+:host {
   display: flex;
   flex-direction: column;
-  app-header-manager{
-    height: 7vh;
+  background: url(../../../assets/dash-board/blur-bg-blurred.jpg) no-repeat;
+  app-header-manager {
+    height: 6vh;
   }
-  .wrapping{
+  .wrapping {
     display: flex;
-    height: 93vh;
-    .out-let{
+    height: 94vh;
+    .out-let {
       flex: 1;
       order: 2;
+      overflow: hidden;
     }
   }
 }
